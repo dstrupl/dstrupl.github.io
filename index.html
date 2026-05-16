@@ -1,1 +1,335 @@
-<h1> Hello </h1>
+---
+layout: none
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>David Strupl</title>
+    <meta
+      name="description"
+      content="David Strupl — software engineer at Cisco. Side projects, writing, and the games I play."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1020'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-size='34' font-weight='700' fill='%237dd3fc'%3EdS%3C/text%3E%3C/svg%3E" />
+    <style>
+      :root {
+        --bg: #0b1020;
+        --bg-soft: #121933;
+        --card: #161e3d;
+        --border: #243056;
+        --text: #e6e9f5;
+        --muted: #a3aed0;
+        --accent: #7dd3fc;
+        --accent-2: #c4b5fd;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f8fc;
+          --bg-soft: #ffffff;
+          --card: #ffffff;
+          --border: #e4e7ef;
+          --text: #15192b;
+          --muted: #5b6580;
+          --accent: #0369a1;
+          --accent-2: #6d28d9;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: radial-gradient(
+            1200px 600px at 80% -10%,
+            rgba(125, 211, 252, 0.12),
+            transparent 60%
+          ),
+          radial-gradient(
+            900px 500px at -10% 10%,
+            rgba(196, 181, 253, 0.12),
+            transparent 60%
+          ),
+          var(--bg);
+        color: var(--text);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          Inter, "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: color 0.15s ease, border-color 0.15s ease;
+      }
+      a:hover,
+      a:focus {
+        color: var(--accent-2);
+        border-bottom-color: var(--accent-2);
+      }
+      .container {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 64px 24px 96px;
+      }
+      header.hero {
+        margin-bottom: 48px;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      h1 {
+        font-size: clamp(2rem, 4.4vw, 3rem);
+        line-height: 1.15;
+        margin: 0 0 12px;
+        letter-spacing: -0.01em;
+      }
+      h1 .accent {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .lede {
+        font-size: 1.1rem;
+        color: var(--muted);
+        max-width: 60ch;
+        margin: 0 0 20px;
+      }
+      .quick-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-top: 8px;
+      }
+      .quick-links a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        font-size: 0.92rem;
+      }
+      .quick-links a:hover {
+        border-color: var(--accent);
+      }
+      section {
+        margin-top: 44px;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin: 0 0 14px;
+        letter-spacing: 0.01em;
+      }
+      p.section-lede {
+        color: var(--muted);
+        margin: 0 0 18px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 14px;
+      }
+      .card {
+        display: block;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 18px 18px 16px;
+        color: inherit;
+      }
+      .card:hover {
+        border-color: var(--accent);
+        transform: translateY(-1px);
+        transition: transform 0.15s ease, border-color 0.15s ease;
+      }
+      .card .title {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var(--text);
+      }
+      .card .desc {
+        font-size: 0.92rem;
+        color: var(--muted);
+        margin: 0;
+      }
+      ul.plain {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul.plain li {
+        padding: 6px 0;
+        color: var(--muted);
+      }
+      ul.plain li a {
+        color: var(--text);
+      }
+      ul.plain li a:hover {
+        color: var(--accent-2);
+      }
+      footer {
+        margin-top: 64px;
+        padding-top: 20px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.9rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      footer a {
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <div class="eyebrow">David Strupl</div>
+        <h1>
+          Software engineer, tinkerer,<br />
+          <span class="accent">long-time games player.</span>
+        </h1>
+        <p class="lede">
+          Hi, I'm David. I currently work at
+          <a href="https://www.cisco.com/" rel="noopener noreferrer">Cisco</a>.
+          On the side I build small apps and play a lot of board and strategy
+          games online. This page is a small index of where to find me on the
+          web.
+        </p>
+        <div class="quick-links">
+          <a
+            href="https://www.linkedin.com/in/david-strupl-0a939b1/"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a
+            href="https://dstrupl.blogspot.com/"
+            rel="noopener noreferrer"
+            >Blog</a
+          >
+          <a href="https://github.com/dstrupl" rel="noopener noreferrer"
+            >GitHub</a
+          >
+        </div>
+      </header>
+
+      <section>
+        <h2>Projects</h2>
+        <p class="section-lede">
+          A few small things I've built — mostly under the
+          <code>solutions.cz</code> domain.
+        </p>
+        <div class="grid">
+          <a
+            class="card"
+            href="https://mp.solutions.cz/"
+            rel="noopener noreferrer"
+          >
+            <div class="title">Mission Possible</div>
+            <p class="desc">
+              A location-based mobile game where teams meet up, race to GPS
+              target points, and finish together.
+            </p>
+          </a>
+          <a
+            class="card"
+            href="https://play.google.com/store/apps/details?id=cz.solutions.missionpossible"
+            rel="noopener noreferrer"
+          >
+            <div class="title">Mission Possible on Google Play</div>
+            <p class="desc">
+              The Android build of Mission Possible — install it and try a
+              mission with friends.
+            </p>
+          </a>
+          <a
+            class="card"
+            href="https://whisperer.solutions.cz/"
+            rel="noopener noreferrer"
+          >
+            <div class="title">Interactive Fiction Whisperer</div>
+            <p class="desc">
+              An experiment in mixing classic interactive fiction with a
+              friendly, modern interface.
+            </p>
+          </a>
+          <a
+            class="card"
+            href="https://friendlybets.solutions.cz/"
+            rel="noopener noreferrer"
+          >
+            <div class="title">Friendly Bets</div>
+            <p class="desc">
+              Small bets among friends, kept honest — for fun, not money.
+            </p>
+          </a>
+        </div>
+      </section>
+
+      <section>
+        <h2>Where I hang out</h2>
+        <p class="section-lede">
+          If you want a game, you can usually find me on one of these:
+        </p>
+        <ul class="plain">
+          <li>
+            <a
+              href="https://www.littlegolem.net/jsp/main/"
+              rel="noopener noreferrer"
+              >Little Golem</a
+            >
+            — turn-based abstract strategy games (Hex, Twixt, Amazons, and
+            more).
+          </li>
+          <li>
+            <a href="https://online-go.com/" rel="noopener noreferrer"
+              >OGS (online-go.com)</a
+            >
+            — for Go / Baduk / Weiqi.
+          </li>
+          <li>
+            <a href="https://www.chess.com/home" rel="noopener noreferrer"
+              >chess.com</a
+            >
+            — for the usual game of chess.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Writing</h2>
+        <p class="section-lede">
+          Occasional, mostly old, mostly random thoughts about software and
+          life.
+        </p>
+        <ul class="plain">
+          <li>
+            <a href="https://dstrupl.blogspot.com/" rel="noopener noreferrer"
+              >David's random thoughts</a
+            >
+            — my Blogspot.
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <div>&copy; David Strupl</div>
+        <div><a href="/privacy/">Privacy policy</a></div>
+      </footer>
+    </main>
+  </body>
+</html>
