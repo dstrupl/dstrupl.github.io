@@ -116,12 +116,34 @@
         <dd>Pick Glass chimes, Soft marimba, Warm synth or Off on the start screen, or use the
           Game › Sound menu. Press <kbd>O</kbd> during a game to switch sound on or off.</dd>
         <dt>How do I reset the high scores?</dt>
-        <dd>Quit Polydrop, then in Finder choose Go › Go to Folder, enter
-          <code>~/Library/Containers/com.dastrupl.polydrop</code> and move that folder to the
-          Trash. This resets all settings and high scores.</dd>
+        <dd>Return to the start screen, choose Game › Erase Saved and Synced Data…
+          (Shift-Command-Delete), then confirm Erase Data. This clears settings, your saved
+          player name and all high scores on this Mac and, when iCloud connects, your other
+          Macs. Offline Macs discard games and changes from before the reset when they
+          reconnect. This cannot be undone. Deleting the app's container resets only this
+          Mac; its iCloud copy can return. Account changes keep a local backup of the previous
+          account's progress; the erase command also deletes these backups on this Mac.
+          If the start screen says iCloud sync is paused, erasing affects only this Mac:
+          sign in, enable iCloud Drive, check whether sync resumes and repeat for the iCloud
+          copy. If it stays paused, contact support before deleting the app's local data.</dd>
         <dt>Does Polydrop need an internet connection or an account?</dt>
-        <dd>No. Polydrop works offline, has no account and collects no data. See the
+        <dd>No. Play and local saves work offline without a Polydrop account. When available,
+          iCloud privately syncs settings, the saved player name and high scores between your
+          Macs using the same Apple account. The developer cannot access that data. Switching
+          Apple accounts returns to the start screen and loads the new account's data without
+          uploading the previous account's progress. Optional Game Center leaderboards and achievements send eligible scores and progress to Apple.
+          On macOS 26 or later, finish a named normal game with a positive top-10 score to see
+          Challenge a friend (C after saving your local name). It starts a fresh competition;
+          the score just shown does not count. The button requires a challenge returned by GameKit and
+          unrestricted multiplayer access. High scores &gt; Challenges (C) opens existing
+          competitions. Apple manages participants and Games activity. Play starts the matching
+          setup at level 0 without changing your saved setup or starting level. If Play is opened
+          during an unfinished real game, Polydrop pauses and shows a notice to finish or end it,
+          then open Play again. Demo can be replaced directly. See the
           <a href="privacy.html">privacy policy</a>.</dd>
+
+        <dt>Does erasing synced data reset Game Center?</dt>
+        <dd>No. Game Center scores and achievements are managed separately through Apple.</dd>
       </dl>
 
       <h2>Requirements</h2>

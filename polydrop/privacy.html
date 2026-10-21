@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Polydrop Privacy Policy</title>
-    <meta name="description" content="Polydrop collects no data and has no network access." />
+    <meta name="description" content="Polydrop offers offline play and optional Apple Game Center leaderboards, achievements, challenges and private iCloud sync, without ads or tracking." />
     <style>
       :root {
         --bg: #07090f;
@@ -53,11 +53,14 @@
   <body>
     <main>
       <h1>Polydrop Privacy Policy</h1>
-      <p class="meta">Effective 18 October 2026</p>
+      <p class="meta">Effective 19 October 2026</p>
 
       <p class="summary">
-        <strong>In short:</strong> Polydrop collects no data. It has no network access, no account,
-        no ads, no analytics and no tracking. Your settings and high scores stay on your Mac.
+        Polydrop saves your settings and high scores locally and syncs them through your Apple
+        iCloud account when available. The developer cannot access this data. There are no ads,
+        analytics, tracking or separate Polydrop accounts.
+        Optional Game Center shares eligible normal-game scores and achievement progress
+        with Apple and supports challenges through Apple Games.
       </p>
 
       <h2>Who we are</h2>
@@ -68,24 +71,79 @@
 
       <h2>What Polydrop collects</h2>
       <p>
-        Nothing. Polydrop doesn't collect, transmit, sell or share any personal data or usage data.
-        The app runs in the macOS App Sandbox without permission to use the network, and it
-        contains no analytics, advertising or crash-reporting code from us or from third parties.
+        The developer does not receive your settings, player name, scores or usage data. Polydrop
+        uses Apple's iCloud key-value storage to transmit settings and high scores between your
+        devices signed into the same Apple account. It contains no analytics, advertising or
+        third-party crash-reporting code. Typed high-score names and iCloud tables are not published to other players.
       </p>
 
-      <h2>What stays on your Mac</h2>
-      <p>Polydrop saves two things in its own sandbox container on your Mac:</p>
+      <p>
+        Polydrop also uses Apple's Game Center service to submit a score and its named-setup leaderboard identifier
+        when a normal game ends while signed in, and achievement identifiers and progress as
+        pieces land. Game Center associates these records with your Apple Game Center account.
+        Named tables use pit dimensions in either orientation (for example, 3×7×12 Basic shares
+        the Hallway table). Zero scores never submit to leaderboards. Practice, Demo and Custom
+        score tables outside the named setups never submit scores or achievement progress.
+        There is no third-party analytics, advertising or crash-reporting code.
+      </p>
+
+      <h2>Local storage and iCloud sync</h2>
+      <p>Polydrop saves these things in its own sandbox container on your Mac:</p>
       <ul>
-        <li>your settings: the chosen setup, starting level, rotation speed and sound style;</li>
-        <li>the high-score tables, including the names you type for a high score.</li>
+        <li>your settings: the chosen setup, starting level, rotation speed, sound style and saved player name;</li>
+        <li>the high-score tables, including the names you type for a high score;</li>
+        <li>achievement progress and played setups, associated locally with your Game Center player identifier.</li>
       </ul>
       <p>
-        This information never leaves your Mac and the developer can't see it. To erase it,
-        quit Polydrop and delete the folder
-        <code>~/Library/Containers/com.dastrupl.polydrop</code>.
+        When iCloud is available, settings, the saved player name and high-score tables are stored in your iCloud account. Achievement progress is handled separately by Game Center. The
+        developer has no access to that private key-value store. Polydrop works without an
+        internet connection or an Apple account; changes remain on your Mac and sync later
+        when available. Sync timing is controlled by Apple and is not immediate. To control
+        iCloud access, use System Settings &gt; your Apple account &gt; iCloud. Switching Apple
+        accounts returns to the start screen, saves a local backup of the previous account's
+        progress and loads the new account's settings and scores. The old data is not uploaded
+        to the new account.
+      </p>
+      <p>
+        To erase saved and synced data, return to the start screen and choose
+        <strong>Game › Erase Saved and Synced Data…</strong> (Shift-Command-Delete), then
+        confirm. This clears settings, the saved player name, all high scores and local
+        previous-account backups. A reset marker syncs through iCloud; other Macs discard
+        their older synced data when they reconnect. Previous-account backups are local only;
+        to erase those on another Mac, use the same command on that Mac. A running game on those Macs
+        ends without republishing its result. New games played after the reset can sync normally.
+        This reset does not erase Game Center achievements or scores, which Apple manages separately.
+        The reset cannot be undone. If offline, keep the app installed until the reset syncs.
+        When your Apple account cannot be confirmed, sync pauses and no data is uploaded;
+        the start screen explains this. A reset while sync is paused affects only this Mac.
+        Sign in and enable iCloud Drive, wait for sync to resume, then repeat the reset on
+        the intended account to erase its iCloud copy.
+        Deleting <code>~/Library/Containers/com.dastrupl.polydrop</code> only removes this Mac's
+        copy, and its iCloud copy can return. We do not rely on macOS offering a per-app iCloud
+        key-value deletion control.
       </p>
 
-      <h2>Apple</h2>
+      <h2>Game Center and Apple Games</h2>
+      <p>
+        Apple handles Game Center account information, scores and gameplay activity under its
+        <a href="https://www.apple.com/legal/privacy/data/en/game-center/">Game Center privacy notice</a>.
+        Your Game Center nickname, avatar, leaderboard scores and achievements can be visible
+        to other players.
+        Apple's <a href="https://www.apple.com/legal/privacy/data/en/apple-games/">Games app</a>
+        can display this information on supported devices. On macOS 26 and later, optional
+        challenges use Apple's interface to select participants and share competitions. Apple
+        handles participation, invitations, challenge scores and Games activity; when you open
+        a game activity, Polydrop reads only its definition identifier to select the setup.
+        The app starts, pauses, resumes and ends the received activity without reading
+        participant details, invitation text or other activity properties. Polydrop does not
+        request your friends list or store your Game Center nickname or avatar. It stores your
+        player identifier locally only to keep achievement progress separate by account.
+        You can manage your account and sharing in System
+        Settings &gt; Game Center. Signing out keeps future games local; deleting local Polydrop
+        data does not delete records Apple holds in Game Center.
+      </p>
+
+      <h2>Apple services</h2>
       <p>
         Apple handles downloads, purchases and, if you choose to share them, crash reports and
         app analytics under
@@ -95,14 +153,17 @@
 
       <h2>Children</h2>
       <p>
-        Polydrop is suitable for all ages. Because it collects no data, it collects no data from
-        children either.
+        Polydrop's offline play is suitable for all ages. Apple manages children's Game Center
+        accounts and sharing restrictions through its services and Screen Time controls.
       </p>
 
       <h2>Your rights</h2>
       <p>
-        Since we hold no personal data about you, there's nothing for us to access, correct or
-        delete. You can still contact us with any question about privacy at the address above.
+        The developer cannot access your private iCloud key-value store or local saves.
+        You can remove names, scores and settings with the erase command described above.
+        For help with those controls or local account backups, contact the address above;
+        please do not send your saved data unless you choose to share it.
+        For records held by Apple Game Center, use Apple's account and privacy controls.
       </p>
 
       <h2>Changes</h2>
